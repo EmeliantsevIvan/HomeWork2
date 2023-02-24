@@ -1,70 +1,44 @@
-﻿/*
-// Задача 10: Напишите программу, которая принимает на вход трёхзначное число и на выходе показывает вторую цифру этого числа.
-// 456 -> 5
-// 782 -> 8
-// 918 -> 1
+﻿/*Напишите программу, которая принимает на вход координаты двух точек и находит расстояние между ними в 3D пространстве.
+A (3,6,8); B (2,1,-7), -> 15.84; A (7,-5, 0); B (1,-1,9) -> 11.53 
 
 
-int SecondNumber(int Number)
+int x1 = ReadInt("input х for point 1: ");
+int y1 = ReadInt("input y for point 1: ");
+int z1 = ReadInt("input z for point 1: ");
+int x2 = ReadInt("input х for point 2: ");
+int y2 = ReadInt("input y for point 2: ");
+int z2 = ReadInt("input z for point 2: ");
+
+int A = x2 - x1;
+int B = y2 - y1;
+int C = z2 - z1;
+
+double length = Math.Sqrt(A * A + B * B + C * C);
+Console.WriteLine("distance = " + length);
+
+
+int ReadInt(string message)
 {
-    int des = Number % 100;
-
-    int result = des / 10; 
-    return result;
+    Console.Write(message);
+    return Convert.ToInt32(Console.ReadLine());
 }
 
-
-Console.Write("Input a number: ");
-int num = Convert.ToInt32(Console.ReadLine());
-
-int newNum = SecondNumber(num);
-Console.WriteLine($"new version of {num} is {newNum}");
-*/
-
-/*
-// Задача 13: Напишите программу, которая выводит третью цифру заданного числа.
-// 645 -> 5
-// 32679 -> 6
-// 21 -> -1
-
-
-int thirdNumber(int number);
-if (number <=-100 || number >=100)
-{
-    result = -1
-}
-
-Console.Write("Введи число: ");
-int anyNumber = Convert.ToInt32(Console.ReadLine());
-string anyNumberText = Convert.ToString(anyNumber);
-if (anyNumberText.Length > 2){
-  Console.WriteLine("третья цифра -> " + anyNumberText[2]);
-}
-else {
-  Console.WriteLine("-> третьей цифры нет");
-}
 */
 
 
-Задача 15: Напишите программу, которая принимает на вход цифру, обозначающую день недели, и проверяет, является ли этот день выходным.
+/* Задача 23
+Напишите программу, которая принимает на вход число (N) и выдаёт таблицу кубов чисел от 1 до N.
+3 -> 1, 8, 27; 5 -> 1, 8, 27, 64, 125  */
 
-//6 -> да
-//7 -> да
-//1 -> нет
+int number = ReadInt("Введите число: ");
 
-bool Day (int number)
+for (int i = 1; i <= number; i++)
 {
-    bool result = true;
-    if (number <=5 || number >7)
-    {
-        result = false;
-    }
-    result = Day;
-    return result;
+    Console.Write($"{i * i * i}, ");
 }
 
-Console.Write("Введите число от 1 до 7: ");
-int num = Convert.ToInt32(Console.ReadLine());
-
-Console.WriteLine(result);
-
+int ReadInt(string message)
+{
+    Console.Write(message);
+    return Convert.ToInt32(Console.ReadLine());
+}
